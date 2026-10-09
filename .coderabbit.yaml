@@ -1,0 +1,35 @@
+# The one CodeRabbit config for every mark-brannan repo. A repo with no
+# .coderabbit.yaml uses this file as is. A repo that needs more sets
+# `inheritance: true` in its own file and lists only its additions; its
+# path_instructions are added to these, and the same path overrides ours.
+#
+# Self-contained on purpose: nothing here reads from another repo, so any
+# repo can leave by adding its own file without `inheritance: true`.
+# The prose rules are a digest of rules/writing.md in mark-brannan/claude.
+
+language: en-US
+early_access: false
+
+reviews:
+  profile: assertive
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  auto_review:
+    enabled: true
+    drafts: false
+  path_instructions:
+    - path: "{**/README*,**/CHANGELOG*,docs/**,**/SKILL.md}"
+      instructions: >
+        Human-facing prose. Flag in added lines only: a list item or table
+        row over 110 rendered characters (link syntax stripped) or longer
+        than the shortest neighbour; flags, fields, env vars or scar stories
+        in a README (they belong in the code header); a table whose columns
+        repeat each other; a parenthetical that restates its bullet; AI-tell
+        words (delve, leverage, seamless, robust, comprehensive, foster,
+        elevate, unlock) and "it's worth noting"/"not just X, but Y". Flag
+        edits to existing README/CHANGELOG prose beyond correcting a false
+        claim. A length complaint means delete, never add a clause.
+
+chat:
+  auto_reply: true

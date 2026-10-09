@@ -6,6 +6,12 @@
 # Self-contained on purpose: nothing here reads from another repo, so any
 # repo can leave by adding its own file without `inheritance: true`.
 # The prose rules are a digest of rules/writing.md in mark-brannan/claude.
+#
+# Poems and the rabbit's voice are set per repo on the CodeRabbit website.
+# A key set here would outrank them, so this file leaves them alone and
+# inherits the website settings beneath it.
+
+inheritance: true
 
 language: en-US
 early_access: false
@@ -14,7 +20,6 @@ reviews:
   profile: assertive
   request_changes_workflow: false
   high_level_summary: true
-  poem: false
   auto_review:
     enabled: true
     drafts: false
